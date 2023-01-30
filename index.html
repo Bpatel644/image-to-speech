@@ -3,15 +3,58 @@
   <head>
     <meta charset="utf-8">
     <title>Image to Speech Converter</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+input[type="file"] {
+  padding: 10px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: lightblue;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+      /* Your CSS styles here */
+    </style>
   </head>
   <body>
-    <h1>Image to Speech Converter</h1>
-    <input type="file" id="image-input">
-    <br><br>
-    <button id="convert-button">Convert to Speech</button>
-    <br><br>
-    <audio id="audio-player"></audio>
-    <script src="script.js"></script>
+    <!-- Your HTML and JavaScript code here -->
+    <script>
+      // Get references to the input, button, and audio player elements
+var imageInput = document.getElementById('image-input');
+var convertButton = document.getElementById('convert-button');
+var audioPlayer = document.getElementById('audio-player');
+
+// Disable the button until an image is selected
+convertButton.disabled = true;
+
+// Listen for changes to the input to enable the button
+imageInput.addEventListener('change', function() {
+  convertButton.disabled = false;
+});
+
+// Listen for clicks on the button to convert the image
+convertButton.addEventListener('click', function() {
+  // Code to convert the image to speech would go here
+  // ...
+
+  // Play the audio file
+  audioPlayer.src = 'path/to/audio.mp3';
+  audioPlayer.play();
+});
+
+      // Your JavaScript code here
+    </script>
   </body>
 </html>
